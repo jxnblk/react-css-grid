@@ -4,7 +4,7 @@
 **Experimental**
 Responsive CSS-based React grid component
 
-[![Build Status](https://travis-ci.org/jxnblk/understyle.svg?branch=master)](https://travis-ci.org/jxnblk/understyle)
+[![Build Status](https://travis-ci.org/jxnblk/react-css-grid.svg?branch=master)](https://travis-ci.org/jxnblk/react-css-grid)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ```sh
