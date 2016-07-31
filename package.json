@@ -4,9 +4,11 @@
   "description": "Responsive CSS-based React grid component",
   "main": "index.js",
   "scripts": {
+    "build": "webpack -p",
     "start": "webpack-dev-server",
-    "prepublish": "babel src --out-dir dist",
-    "test": "ava -v"
+    "gh-pages": "gh-pages -d demo",
+    "prepublish": "mkdir -p dist && babel src --out-dir dist",
+    "test": "standard && ava -v"
   },
   "keywords": [
     "react",
@@ -25,13 +27,18 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.11.6",
     "enzyme": "^2.4.1",
-    "react": "^15.2.1",
-    "react-addons-test-utils": "^15.2.1",
-    "react-dom": "^15.2.1",
+    "gh-pages": "^0.11.0",
+    "react": "^15.3.0",
+    "react-addons-test-utils": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "standard": "^7.1.2",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
-  "dependencies": {
-    "robox": "^1.0.0-beta.1"
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
   }
 }

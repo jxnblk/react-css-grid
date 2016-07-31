@@ -1,28 +1,27 @@
 
 import React from 'react'
-import Grid from '..'
-
+import Grid from '../src/Grid'
 
 class App extends React.Component {
   render () {
     return (
-      <Grid p={3}>
-        <h1>Hello react-css-grid</h1>
+      <div className=''>
+        <h1 className='p3'>React CSS Grid</h1>
         <div>
-          <Grid sm={6} md={3} p={2}>
-            sm6 md3
+          <Grid className='p3' sm={6} md={3}>
+            <h2 className='m0'>sm6 md3</h2>
           </Grid>
-          <Grid sm={6} md={3} p={2}>
-            sm6 md3
+          <Grid className='p3' sm={6} md={3}>
+            <h2 className='m0'>sm6 md3</h2>
           </Grid>
-          <Grid sm={6} md={3} p={2}>
-            sm6 md3
+          <Grid className='p3' sm={6} md={3}>
+            <h2 className='m0'>sm6 md3</h2>
           </Grid>
-          <Grid sm={6} md={3} p={2}>
-            sm6 md3
+          <Grid className='p3' sm={6} md={3}>
+            <h2 className='m0'>sm6 md3</h2>
           </Grid>
         </div>
-      </Grid>
+      </div>
     )
   }
 }

@@ -1,6 +1,5 @@
 
 import React from 'react'
-import Robox from 'robox'
 import createStyles from './create-styles'
 
 const breakpoints = {
@@ -9,40 +8,48 @@ const breakpoints = {
   lg: 'screen and (min-width:64em)'
 }
 
-export const createGrid = (Comp) => {
-  const Base = Robox(Comp)
+const cols = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
-  class Wrapped extends React.Component {
+export const createGrid = (Comp) => {
+  class GridWrap extends React.Component {
     render () {
       const {
         col = 12,
         sm,
         md,
         lg,
+        align,
         children,
         ...props
       } = this.props
 
-      const { css, className } = createStyles(breakpoints)({ col, sm, md, lg })
+      const { css, className } = createStyles(breakpoints)({ align, col, sm, md, lg })
 
       const cx = className + ' ' + (props.className || '')
 
-      const sx = {
-        boxSizing: 'border-box',
-        display: 'inline-block',
-        ...props.style
-      }
-
       return (
-        <Base {...props} style={sx} className={cx}>
+        <Comp {...props} className={cx}>
           <style dangerouslySetInnerHTML={{ __html: css }} />
           {children}
-        </Base>
+        </Comp>
       )
     }
   }
 
-  return Wrapped
+  GridWrap.propTypes = {
+    col: React.PropTypes.oneOf(cols),
+    sm: React.PropTypes.oneOf(cols),
+    md: React.PropTypes.oneOf(cols),
+    lg: React.PropTypes.oneOf(cols),
+    align: React.PropTypes.oneOf([
+      'top',
+      'middle',
+      'bottom',
+      'baseline'
+    ])
+  }
+
+  return GridWrap
 }
 
 export default createGrid
