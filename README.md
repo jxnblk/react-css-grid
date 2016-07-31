@@ -54,10 +54,13 @@ export default createGrid(CustomGrid)
 
 ## How it works
 
-The Grid component creates CSS rules based on props and insert that string into an inline style tag. The component only creates the rules it needs for itself, however other Grid components may generate duplicative styles of their own.
+The Grid component uses `display: inline-block` to create grid layouts.
+It creates CSS rules based on props and inserts that string into an inline style tag.
+The component only creates the rules it needs for itself,
+however other Grid components may generate duplicative styles of their own.
 
 ## Caveats
-- Produces an inline style tag within the body
+- Produces an inline style **tag** within the body (e.g. not inline styles)
 - Similar component instances create duplicative CSS rules – this may or may not affect performance
 - Atomic class selectors are global
 
