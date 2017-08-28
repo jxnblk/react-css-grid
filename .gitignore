@@ -1,3 +1,4 @@
-
 dist
-demo/bundle.js
+.site
+.nyc_output
+coverage
