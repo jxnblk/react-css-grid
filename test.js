@@ -18,12 +18,12 @@ test('renders with string width prop', t => {
   t.snapshot(a)
 })
 
-test('renders with gutter prop', t => {
-  const a = render(<Grid gutter={16} />).toJSON()
+test('renders with gap prop', t => {
+  const a = render(<Grid gap={16} />).toJSON()
   t.snapshot(a)
 })
 
-test('renders with string gutter prop', t => {
-  const a = render(<Grid gutter='1em' />).toJSON()
+test('renders with string gap prop', t => {
+  const a = render(<Grid gap='1em' />).toJSON()
   t.snapshot(a)
 })

@@ -7,14 +7,14 @@ const width = props => ({
   gridTemplateColumns: `repeat(auto-fit, minmax(${px(props.width)}, 1fr))`
 })
 
-const gutter = props => ({
-  gridGap: px(props.gutter)
+const gap = props => ({
+  gridGap: px(props.gap)
 })
 
 const Grid = styled.div`
   display: grid;
   ${width}
-  ${gutter}
+  ${gap}
 `
 
 Grid.propTypes = {
@@ -22,7 +22,7 @@ Grid.propTypes = {
     PropTypes.number,
     PropTypes.string
   ]).isRequired,
-  gutter: PropTypes.oneOfType([
+  gap: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
   ]).isRequired
@@ -30,7 +30,7 @@ Grid.propTypes = {
 
 Grid.defaultProps = {
   width: 256,
-  gutter: 32
+  gap: 32
 }
 
 export default Grid
