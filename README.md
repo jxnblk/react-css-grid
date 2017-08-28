@@ -1,7 +1,7 @@
 
 # React CSS Grid
 
-React layout component based on [CSS Grid Layout][spec] ([Demo][demo])
+React layout component based on [CSS Grid Layout][spec] and built with [styled-components][sc] ([Demo][demo])
 
 [![Build Status][travis-badge]][travis]
 
@@ -54,7 +54,7 @@ See http://caniuse.com/#feat=css-grid
 ## Related
 
 - [Grid Styled](https://github.com/jxnblk/grid-styled)
-- [styled-components](https://github.com/styled-components/styled-components)
+- [styled-components][sc]
 - [CSS Grid Layout Module][spec]
 - [CSS Grid Layout on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
 - [Grid by Example](https://gridbyexample.com/video/series-auto-fill-auto-fit/)
@@ -63,5 +63,6 @@ See http://caniuse.com/#feat=css-grid
 
 [spec]: https://www.w3.org/TR/css-grid-1/
 [demo]: http://jxnblk.com/react-css-grid/
+[sc]: https://styled-components.com
 
 [MIT License](LICENSE.md)
