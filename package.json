@@ -1,13 +1,12 @@
 {
   "name": "react-css-grid",
   "version": "1.0.0",
-  "description": "React layout component based on CSS Grid Layout",
+  "description": "React layout component based on CSS Grid Layout and built with styled-components",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src -d dist",
-    "start": "start-storybook -c storybook -p 8000",
-    "build": "build-storybook -c storybook -o .site",
-    "deploy": "storybook-to-ghpages",
+    "start": "webpack-dev-server",
+    "build": "webpack -p",
     "test": "nyc ava"
   },
   "keywords": [
@@ -27,17 +26,22 @@
   },
   "devDependencies": {
     "@storybook/react": "^3.2.8",
-    "@storybook/storybook-deployer": "^2.0.0",
     "ava": "^0.22.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
+    "grid-styled": "^2.0.0-10",
     "nyc": "^11.1.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-test-renderer": "^15.6.1"
+    "react-live": "^1.7.0",
+    "react-test-renderer": "^15.6.1",
+    "react-x-ray": "^1.0.0-2",
+    "refunk": "^1.0.0-2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
   },
   "ava": {
     "require": [

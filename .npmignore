@@ -1,6 +1,7 @@
 src
+docs
 storybook
-.site
+webpack.config.js
 .nyc_output
 coverage
 test.js*
