@@ -1,11 +1,13 @@
 
 # React CSS Grid
 
-React layout component based on [CSS Grid Layout][spec] and built with [styled-components][sc] ([Demo][demo])
+React layout component based on [CSS Grid Layout][spec] and built with [styled-components][sc]
 
 [![Build Status][travis-badge]][travis]
 
-[travis-badge]: https://travis-ci.org/jxnblk/react-css-grid.svg?branch=master
+http://jxnblk.com/react-css-grid
+
+[travis-badge]: https://img.shields.io/travis/jxnblk/react-css-grid/master.svg?style=flat-square
 [travis]: https://travis-ci.org/jxnblk/react-css-grid
 
 ```sh
