@@ -11,11 +11,21 @@ const gap = props => ({
   gridGap: px(props.gap)
 })
 
-const Grid = styled.div`
-  display: grid;
-  ${width}
-  ${gap}
-`
+const align = props => props.align ? ({
+  alignItems: props.align
+}) : null
+
+const span = props => props.span ? ({
+  gridColumn: `span ${props.span}`
+}) : null
+
+const Grid = styled.div([], {
+  display: 'grid'
+},
+  width,
+  gap,
+  align
+)
 
 Grid.propTypes = {
   width: PropTypes.oneOfType([
@@ -29,8 +39,10 @@ Grid.propTypes = {
 }
 
 Grid.defaultProps = {
-  width: 256,
+  width: 320,
   gap: 32
 }
+
+Grid.Item = styled.div([], span)
 
 export default Grid

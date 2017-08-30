@@ -43,17 +43,38 @@ class App extends React.Component {
 
 ## Props
 
-- `width` (number or string) width at which child elements will break into columns - either a number pixel value or any valid CSS width value as a string
-- `gap` (number or string) gutter (`grid-gap`) between columns - either a number pixel value or any valid CSS width value as a string
+### `width` (number or string)
+
+Sets the width at which child elements will break into columns.
+Pass a number for pixel values or a string for any other valid CSS length.
+
+```jsx
+<Grid width={512} />
+```
+
+### `gap` (number or string)
+
+Sets the gutter (`grid-gap`) between columns.
+Pass a number for pixel values or a string for any other valid CSS length.
+
+```jsx
+<Grid gap={16} />
+```
+
+### `align` (string)
+
+Sets `align-items` to control child element alignment.
 
 
 ## Browser Support
 
 See http://caniuse.com/#feat=css-grid
 
+
 ## Related
 
 - [Grid Styled](https://github.com/jxnblk/grid-styled)
+- [Styled System](https://github.com/jxnblk/styled-system)
 - [styled-components][sc]
 - [CSS Grid Layout Module][spec]
 - [CSS Grid Layout on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
