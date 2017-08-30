@@ -1,6 +1,5 @@
 src
 docs
-storybook
 webpack.config.js
 .nyc_output
 coverage
