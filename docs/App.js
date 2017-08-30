@@ -3,6 +3,8 @@ import { createProvider } from 'refunk'
 import XRay from 'react-x-ray'
 import Grid from 'react-css-grid'
 import { Box } from 'grid-styled'
+import Bar from './Bar'
+import Slider from './Slider'
 import Col from './Col'
 import Heading from './Heading'
 import Pre from './Pre'
@@ -18,72 +20,78 @@ import Live from './Live'
 
 const App = props => (
   <XRay disabled={!props.xray}>
-    <button
-      onClick={e => {
-        props.update(toggleXRay)
-      }}
-      children='xray'
-    />
-    <div>
-      <label htmlFor='width'>width {props.width}</label>
-      <input
-        type='range'
-        id='width'
-        name='width'
-        max={widths.length - 1}
-        value={widths.indexOf(props.width)}
-        onChange={e => props.update(handleWidthChange(e.target.value))}
-      />
-    </div>
-    <div>
-      <label htmlFor='width'>gap {props.gap}</label>
-      <input
-        type='range'
-        id='gap'
-        name='gap'
-        max={gaps.length - 1}
-        value={gaps.indexOf(props.gap)}
-        onChange={e => props.update(handleGapChange(e.target.value))}
-      />
-    </div>
-    <Box p={3}>
+    <Bar p={2}>
+      <Grid width={128}>
+        <button
+          onClick={e => {
+            props.update(toggleXRay)
+          }}
+          children='xray'
+        />
+        <Grid.Item span={2}>
+          <label htmlFor='width'>width {props.width}</label>
+          <Slider
+            id='width'
+            name='width'
+            max={widths.length - 1}
+            value={widths.indexOf(props.width)}
+            onChange={e => props.update(handleWidthChange(e.target.value))}
+          />
+        </Grid.Item>
+        <Grid.Item span={2}>
+          <label htmlFor='width'>gap {props.gap}</label>
+          <Slider
+            type='range'
+            id='gap'
+            name='gap'
+            max={gaps.length - 1}
+            value={gaps.indexOf(props.gap)}
+            onChange={e => props.update(handleGapChange(e.target.value))}
+          />
+        </Grid.Item>
+      </Grid>
+    </Bar>
+    <Box p={[ 2, 3 ]}>
       <Grid
         width={props.width}
         gap={props.gap}
         align='baseline'>
-        <Heading.h1>React CSS Grid</Heading.h1>
         <Grid.Item>
-          <Text>
+          <Heading.h1>React CSS Grid</Heading.h1>
+          <Text mb={2}>
             React layout component based on CSS Grid Layout and built with
             {' '}
             <Link href='https://styled-components.com'>
               styled-components
             </Link>
           </Text>
+          <Flex>
+            <BlockLink
+              mr={1}
+              href='https://travis-ci.org/jxnblk/react-css-grid'>
+              <Image
+                src='https://img.shields.io/travis/jxnblk/react-css-grid/master.svg?style=flat-square'
+                height='20'
+              />
+            </BlockLink>
+            <Tweet />
+            <BlockLink
+              ml={1}
+              href='https://github.com/jxnblk/react-css-grid'>
+              <Image
+                src='https://img.shields.io/github/stars/jxnblk/react-css-grid.svg?style=social&label=Star'
+              />
+            </BlockLink>
+          </Flex>
         </Grid.Item>
-        <Pre>npm i react-css-grid</Pre>
-        <Flex>
-          <BlockLink
-            mr={1}
-            href='https://travis-ci.org/jxnblk/react-css-grid'>
-            <Image
-              src='https://img.shields.io/travis/jxnblk/react-css-grid/master.svg?style=flat-square'
-              height='20'
-            />
-          </BlockLink>
-          <Tweet />
-          <BlockLink
-            ml={1}
-            href='https://github.com/jxnblk/react-css-grid'>
-            <Image
-              src='https://img.shields.io/github/stars/jxnblk/react-css-grid.svg?style=social&label=Star'
-            />
-          </BlockLink>
-        </Flex>
         <div>
+          <Heading>Install</Heading>
+          <Pre>npm i react-css-grid</Pre>
+        </div>
+        <Grid.Item>
           <Heading mb={2}>Usage</Heading>
           <Pre children={usage} />
-        </div>
+        </Grid.Item>
         <div>
           <Heading mb={2}>Features</Heading>
           <List>
@@ -125,12 +133,20 @@ const App = props => (
           <Heading mb={2}>Gap</Heading>
           <Live code={gapExample} />
         </div>
+        <div>
+          <Heading mb={2}>Align</Heading>
+          <Live code={alignExample} />
+        </div>
         <footer>
-          <Flex>
-            <Link href='https://github.com/jxnblk/react-css-grid'>GitHub</Link>
-            <Box mr={1} />
-            <Link href='http://jxnblk.com'>Made by Jxnblk</Link>
-          </Flex>
+          <Heading mb={2}>Footer</Heading>
+          <List>
+            <li>
+              <Link href='https://github.com/jxnblk/react-css-grid'>GitHub</Link>
+            </li>
+            <li>
+              <Link href='http://jxnblk.com'>Made by Jxnblk</Link>
+            </li>
+          </List>
         </footer>
       </Grid>
     </Box>
@@ -165,6 +181,13 @@ const gapExample = `<Grid
   gap={16}>
   <h2>Hello</h2>
   <h2>Hi</h2>
+</Grid>`
+
+const alignExample = `<Grid
+  width={96}
+  align='baseline'>
+  <h2>Hello</h2>
+  <h4>Hi</h4>
 </Grid>`
 
 const state = {

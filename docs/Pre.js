@@ -4,6 +4,8 @@ import { space } from 'styled-system'
 const Pre = styled.pre`
   font-family: Menlo, monospace;
   font-size: 14px;
+  max-width: 100%;
+  overflow: auto;
   ${space}
 `
 
