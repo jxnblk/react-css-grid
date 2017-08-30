@@ -3,7 +3,10 @@ import styled from 'styled-components'
 const Slider = styled.input`
   display: block;
   width: 100%;
-  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 0;
   height: 2px;
   cursor: pointer;
   color: inherit;

@@ -4,6 +4,8 @@ import XRay from 'react-x-ray'
 import Grid from 'react-css-grid'
 import { Box } from 'grid-styled'
 import Bar from './Bar'
+import Button from './Button'
+import Label from './Label'
 import Slider from './Slider'
 import Col from './Col'
 import Heading from './Heading'
@@ -20,16 +22,13 @@ import Live from './Live'
 
 const App = props => (
   <XRay disabled={!props.xray}>
-    <Bar p={2}>
-      <Grid width={128}>
-        <button
-          onClick={e => {
-            props.update(toggleXRay)
-          }}
-          children='xray'
-        />
+    <Bar p={1}>
+      <Grid
+        width={128}
+        gap={8}
+        align='center'>
         <Grid.Item span={2}>
-          <label htmlFor='width'>width {props.width}</label>
+          <Label htmlFor='width'>width {props.width}</Label>
           <Slider
             id='width'
             name='width'
@@ -39,7 +38,7 @@ const App = props => (
           />
         </Grid.Item>
         <Grid.Item span={2}>
-          <label htmlFor='width'>gap {props.gap}</label>
+          <Label htmlFor='width'>gap {props.gap}</Label>
           <Slider
             type='range'
             id='gap'
@@ -49,15 +48,20 @@ const App = props => (
             onChange={e => props.update(handleGapChange(e.target.value))}
           />
         </Grid.Item>
+        <Button
+          onClick={e => {
+            props.update(toggleXRay)
+          }}
+          children='x-ray'
+        />
       </Grid>
     </Bar>
     <Box p={[ 2, 3 ]}>
       <Grid
         width={props.width}
-        gap={props.gap}
-        align='baseline'>
+        gap={props.gap}>
         <Grid.Item>
-          <Heading.h1>React CSS Grid</Heading.h1>
+          <Heading.h1 mb={2}>React CSS Grid</Heading.h1>
           <Text mb={2}>
             React layout component based on CSS Grid Layout and built with
             {' '}
@@ -85,7 +89,7 @@ const App = props => (
           </Flex>
         </Grid.Item>
         <div>
-          <Heading>Install</Heading>
+          <Heading mb={2}>Install</Heading>
           <Pre>npm i react-css-grid</Pre>
         </div>
         <Grid.Item>
