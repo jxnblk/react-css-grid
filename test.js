@@ -27,3 +27,18 @@ test('renders with string gap prop', t => {
   const a = render(<Grid gap='1em' />).toJSON()
   t.snapshot(a)
 })
+
+test('renders with align prop', t => {
+  const a = render(<Grid align='baseline' />).toJSON()
+  t.snapshot(a)
+})
+
+test('Grid.Item renders', t => {
+  const a = render(<Grid.Item />).toJSON()
+  t.snapshot(a)
+})
+
+test('Grid.Item renders with span prop', t => {
+  const a = render(<Grid.Item span={2} />).toJSON()
+  t.snapshot(a)
+})
