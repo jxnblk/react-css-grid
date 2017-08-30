@@ -4,9 +4,7 @@ import PropTypes from 'prop-types'
 const px = n => typeof n === 'number' ? n + 'px' : n
 
 const width = props => ({
-  // ['@media screen and (min-width:320px)']: {
-    gridTemplateColumns: `repeat(auto-fit, minmax(${px(props.width)}, 1fr))`
-  // }
+  gridTemplateColumns: `repeat(auto-fit, minmax(${px(props.width)}, 1fr))`
 })
 
 const gap = props => ({
@@ -22,8 +20,7 @@ const span = props => props.span ? ({
 }) : null
 
 const Grid = styled.div([], {
-  display: 'grid',
-  maxWidth: '100%'
+  display: 'grid'
 },
   width,
   gap,
@@ -46,8 +43,6 @@ Grid.defaultProps = {
   gap: 32
 }
 
-Grid.Item = styled.div([], {
-  maxWidth: '100%'
-}, span)
+Grid.Item = styled.div([], span)
 
 export default Grid
