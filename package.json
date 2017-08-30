@@ -1,6 +1,6 @@
 {
   "name": "react-css-grid",
-  "version": "1.0.0",
+  "version": "2.0.0-0",
   "description": "React layout component based on CSS Grid Layout and built with styled-components",
   "main": "dist/index.js",
   "scripts": {
