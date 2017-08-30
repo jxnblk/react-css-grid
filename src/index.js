@@ -35,7 +35,8 @@ Grid.propTypes = {
   gap: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
-  ]).isRequired
+  ]).isRequired,
+  align: PropTypes.string
 }
 
 Grid.defaultProps = {
