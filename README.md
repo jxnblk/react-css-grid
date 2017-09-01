@@ -4,11 +4,14 @@
 React layout component based on [CSS Grid Layout][spec] and built with [styled-components][sc]
 
 [![Build Status][travis-badge]][travis]
+[![GitHub][stars]][gh]
 
-http://jxnblk.com/react-css-grid
+[Demo](http://jxnblk.com/react-css-grid/docs)
 
 [travis-badge]: https://img.shields.io/travis/jxnblk/react-css-grid/master.svg?style=flat-square
 [travis]: https://travis-ci.org/jxnblk/react-css-grid
+[gh]: https://github.com/jxnblk/react-css-grid
+[stars]: https://img.shields.io/github/stars/jxnblk/react-css-grid.svg?style=social&label=Star
 
 ```sh
 npm i react-css-grid
