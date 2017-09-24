@@ -14,7 +14,7 @@ React layout component based on [CSS Grid Layout][spec] and built with [styled-c
 [stars]: https://img.shields.io/github/stars/jxnblk/react-css-grid.svg?style=social&label=Star
 
 ```sh
-npm i react-css-grid
+npm i --save react-css-grid
 ```
 
 ```jsx
